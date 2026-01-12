@@ -1,0 +1,74 @@
+{
+    "guilherme_r": {
+        "cpu_limit":4,
+        "mem_limit":"8G"
+    },
+    "marisa": {
+        "cpu_limit":4,
+        "mem_limit":"8G"
+    },
+    "ana":{
+        "cpu_limit":4,
+        "mem_limit":"16G"
+    } ,
+    "maria":{
+        "cpu_limit":4,
+        "mem_limit":"16G"
+    } ,
+    "jairo":{
+        "cpu_limit":2,
+        "mem_limit":"12G",
+        "admin":true
+    } ,
+    "tharles.andrade":{
+        "cpu_limit":2,
+        "mem_limit":"12G",
+        "admin":true
+    } ,
+    "nathalia.teles":{
+        "cpu_limit":2,
+        "mem_limit":"12G"
+    } ,
+    "annapaulamatos":{
+        "cpu_limit":32,
+        "mem_limit":"64G"
+    } ,
+    "fernandesbaumann":{
+        "cpu_limit":16,
+        "mem_limit":"32G"
+    } ,
+    "tiago":{
+        "admin": true,
+        "cpu_limit":16,
+        "mem_limit":"32G"
+    } ,
+    "gabriella.arruda":{
+        "cpu_limit":4,
+        "mem_limit":"16G"
+    } ,
+    "felipejesus":{
+        "cpu_limit":16,
+        "mem_limit":"32G"
+    } ,
+    "vieiramesquita":{
+        "cpu_limit":16,
+        "mem_limit":"86G"
+    },
+    "bernard_oliveira":{
+        "cpu_limit":16,
+        "mem_limit":"32G"
+    },
+    "acucenabatista":{
+        "cpu_limit":4,
+        "mem_limit":"16G"
+    },
+    "amanda.falcao":{
+        "cpu_limit":2,
+        "mem_limit":"12G"
+
+    },
+    "ana.assuncao":{
+        "cpu_limit":2,
+        "mem_limit":"12G"
+    }
+}

@@ -1,0 +1,51 @@
+services:
+  glances:
+      image: nicolargo/glances:latest
+      restart: always
+      environment:
+        - GLANCES_OPT=-w
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+      pid: host
+      ports:
+        - 9011:61208
+      networks:
+        - web_lapig
+      deploy:
+        resources:
+          limits:
+            memory: 512M
+          reservations:
+            memory: 100M
+  jupyterhub:
+    image: lapig/geojupyterhub:v1
+    container_name: jupyterhub
+    hostname: jupyterhub
+    volumes:
+      - ./data:/srv/jupyterhub
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /data/config/ssl/certe.crt:/ssl/certe.crt:ro
+      - /data/config/ssl/key.key:/ssl/key.key:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - DOCKER_NETWORK_NAME=web_lapig
+    networks:
+      - web_lapig
+    restart: always
+    command: >
+      jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.jupyterhub.service=jupyterhub"
+      - "traefik.docker.network=web_lapig"
+      - "traefik.http.services.jupyterhub.loadbalancer.server.port=443"
+      - "traefik.http.services.jupyterhub.loadbalancer.server.scheme=https"
+      - "traefik.http.routers.jupyterhub.rule=Host(`sci.lapig.iesa.ufg.br`)"
+      - "traefik.http.routers.jupyterhub.tls.certresolver=le"
+      - "traefik.http.routers.jupyterhub.entrypoints=websecure"
+      
+networks:
+  web_lapig:
+    external: true
+    name: web_lapig
