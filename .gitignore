@@ -9,4 +9,17 @@ wheels/
 # Virtual environments
 .venv
 
+# Secrets and environment
+.env
 jupyterhub_cookie_secret
+
+# JupyterHub runtime & state files
+*.sqlite
+*.pid
+var/db/users.json
+var/db/scripts/
+
+# Testes locais/experimentais
+local_tests/
+
+

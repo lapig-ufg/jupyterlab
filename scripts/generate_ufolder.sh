@@ -1,8 +1,8 @@
 #!/bin/bash
 # Script para criar pastas de usuários a partir de um arquivo JSON
 
-JSON_FILE="/data/config/jupyterhub/data/users.json"
-BASE_DIR="/data/jupyter/user"
+JSON_FILE="/home/aurilio/Desktop/jupyterhub/data/users.json"
+BASE_DIR="/home/aurilio/Desktop/jupyterhub/local_tests/jupyterhub/users"
 USER_ID=1000
 GROUP_ID=1000
 
